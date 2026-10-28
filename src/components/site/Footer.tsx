@@ -19,7 +19,7 @@ export function Footer() {
       <div className="container-page grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="flex items-center gap-3">
-            <span className="rounded-2xl bg-white p-1.5"><BrandLogo className="h-14 w-auto" /></span>
+            <BrandLogo className="h-16 w-auto" />
             <span className="max-w-40 font-display text-lg font-bold leading-tight">{siteName}</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-deep-foreground/70">{s("site_tagline")}</p>

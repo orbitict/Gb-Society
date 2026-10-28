@@ -11,8 +11,8 @@ export function BrandLogo({ className, priority = false }: BrandLogoProps) {
     <img
       src={logoUrl}
       alt="Green Bangla Society logo"
-      width={64}
-      height={64}
+      width={236}
+      height={227}
       loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : "auto"}
       className={cn("shrink-0 object-contain", className)}
