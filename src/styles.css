@@ -36,6 +36,9 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-gold: var(--gold);
   --color-gold-foreground: var(--gold-foreground);
+  --color-gold-soft: var(--gold-soft);
+  --color-deep: var(--deep);
+  --color-deep-foreground: var(--deep-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-success: var(--success);
@@ -55,54 +58,61 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --shadow-card: 0 1px 2px oklch(0 0 0 / 4%), 0 8px 24px oklch(0 0 0 / 6%);
   --shadow-lift: 0 2px 6px oklch(0 0 0 / 6%), 0 16px 40px oklch(0 0 0 / 10%);
+  --shadow-gold: 0 10px 30px -8px oklch(0.78 0.12 80 / 55%);
+  --shadow-premium: 0 1px 0 oklch(1 0 0 / 60%) inset, 0 24px 60px -20px oklch(0.27 0.05 165 / 35%);
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.875rem;
   --font-body: "Hind Siliguri", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Hind Siliguri", "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Noto Serif Bengali", "Hind Siliguri", ui-serif, Georgia, serif;
 
-  --background: oklch(0.981 0.007 160.1); /* #F5FAF7 */
-  --foreground: oklch(0.323 0 0); /* #333333 */
+  /* Premium palette: deep emerald + warm gold on ivory */
+  --background: oklch(0.985 0.006 95); /* #FBFAF5 ivory */
+  --foreground: oklch(0.25 0.02 165); /* deep green-black */
   --surface: oklch(1 0 0);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.323 0 0);
+  --card-foreground: oklch(0.25 0.02 165);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.323 0 0);
+  --popover-foreground: oklch(0.25 0.02 165);
 
-  --primary: oklch(0.599 0.154 152.7); /* #059950 logo green */
+  --primary: oklch(0.45 0.1 160); /* #0E6B47 emerald */
   --primary-foreground: oklch(0.99 0 0);
-  --primary-soft: oklch(0.958 0.018 161.1); /* #E7F5ED */
+  --primary-soft: oklch(0.955 0.02 160); /* #E6F3EC */
 
-  --secondary: oklch(0.958 0.018 161.1);
-  --secondary-foreground: oklch(0.492 0.107 159.7);
+  --deep: oklch(0.27 0.05 165); /* #0B3D2E dark sections */
+  --deep-foreground: oklch(0.97 0.01 95);
 
-  --muted: oklch(0.962 0 0);
-  --muted-foreground: oklch(0.512 0 0); /* #666666 */
+  --secondary: oklch(0.955 0.02 160);
+  --secondary-foreground: oklch(0.4 0.09 160);
 
-  --accent: oklch(0.958 0.018 161.1);
-  --accent-foreground: oklch(0.492 0.107 159.7);
+  --muted: oklch(0.96 0.006 95);
+  --muted-foreground: oklch(0.5 0.015 165);
 
-  --gold: oklch(0.806 0.172 120.1); /* #B2CF38 logo leaf green */
-  --gold-foreground: oklch(0.25 0.04 150);
+  --accent: oklch(0.955 0.02 160);
+  --accent-foreground: oklch(0.4 0.09 160);
 
-  --destructive: oklch(0.591 0.228 26.7); /* #E61D25 logo red */
+  --gold: oklch(0.78 0.12 80); /* #D4A63A */
+  --gold-soft: oklch(0.96 0.04 85);
+  --gold-foreground: oklch(0.25 0.04 70);
+
+  --destructive: oklch(0.591 0.228 26.7);
   --destructive-foreground: oklch(0.99 0 0);
   --success: oklch(0.6 0.13 155);
-  --warning: oklch(0.806 0.172 120.1);
+  --warning: oklch(0.78 0.12 80);
 
-  --border: oklch(0.898 0 0); /* #E0E0E0 */
-  --input: oklch(0.898 0 0);
-  --ring: oklch(0.599 0.154 152.7);
+  --border: oklch(0.91 0.01 100);
+  --input: oklch(0.89 0.01 100);
+  --ring: oklch(0.45 0.1 160);
 
   --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.323 0 0);
-  --sidebar-primary: oklch(0.599 0.154 152.7);
+  --sidebar-foreground: oklch(0.25 0.02 165);
+  --sidebar-primary: oklch(0.45 0.1 160);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.958 0.018 161.1);
-  --sidebar-accent-foreground: oklch(0.492 0.107 159.7);
-  --sidebar-border: oklch(0.898 0 0);
-  --sidebar-ring: oklch(0.599 0.154 152.7);
+  --sidebar-accent: oklch(0.955 0.02 160);
+  --sidebar-accent-foreground: oklch(0.4 0.09 160);
+  --sidebar-border: oklch(0.91 0.01 100);
+  --sidebar-ring: oklch(0.45 0.1 160);
 }
 
 .dark {
@@ -122,7 +132,10 @@
   --muted-foreground: oklch(0.72 0 0);
   --accent: oklch(0.28 0.03 155);
   --accent-foreground: oklch(0.95 0 0);
-  --gold: oklch(0.826 0.166 83.5);
+  --gold: oklch(0.8 0.12 82);
+  --gold-soft: oklch(0.3 0.04 85);
+  --deep: oklch(0.15 0.02 165);
+  --deep-foreground: oklch(0.97 0.01 95);
   --gold-foreground: oklch(0.2 0.02 80);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
@@ -149,8 +162,9 @@
   h3,
   h4 {
     font-family: var(--font-heading);
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    line-height: 1.35;
   }
 }
 
@@ -171,4 +185,76 @@
   @media (min-width: 1024px) {
     padding-block: 5.5rem;
   }
+}
+
+/* ---------- Premium helpers ---------- */
+
+/* Islamic 8-point star lattice, used on dark emerald sections */
+@utility bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23D4A63A' stroke-opacity='0.14' stroke-width='1'%3E%3Cpath d='M40 8l9.4 22.6L72 40l-22.6 9.4L40 72l-9.4-22.6L8 40l22.6-9.4z'/%3E%3Cpath d='M17.4 17.4h45.2v45.2H17.4z' transform='rotate(45 40 40)'/%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+@utility text-gold-gradient {
+  background: linear-gradient(100deg, oklch(0.86 0.11 88), oklch(0.74 0.13 72) 55%, oklch(0.88 0.09 92));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+@utility card-premium {
+  border-radius: calc(var(--radius) + 8px);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+@utility lift {
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-premium);
+    border-color: oklch(0.78 0.12 80 / 45%);
+  }
+}
+
+/* Scroll reveal — progressive enhancement, no JS. Browsers without
+   scroll-driven animations simply show content immediately. */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@utility animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float { animation: none; }
 }

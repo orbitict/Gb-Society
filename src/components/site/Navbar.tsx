@@ -23,15 +23,15 @@ export function Navbar() {
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(true);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-surface/90 backdrop-blur supports-[backdrop-filter]:bg-surface/75">
-      <div className="container-page flex h-16 items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 shadow-[0_1px_0_oklch(0_0_0/3%)] backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
+      <div className="container-page flex h-[72px] items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2.5" aria-label="Green Bangla Learning Academy — হোম">
           <BrandLogo className="h-12 w-auto" priority />
           <span className="leading-tight">
-            <span className="block text-sm font-semibold text-foreground">
+            <span className="block font-display text-base font-bold text-deep">
               Green Bangla
             </span>
-            <span className="block text-[11px] text-muted-foreground">
+            <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-gold">
               Learning Academy
             </span>
           </span>
@@ -47,13 +47,13 @@ export function Navbar() {
               কোর্সসমূহ <ChevronDown className="size-4" />
             </button>
             <div className="invisible absolute left-1/2 top-full w-64 -translate-x-1/2 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100">
-              <div className="overflow-hidden rounded-xl border border-border bg-popover shadow-[var(--shadow-card)]">
+              <div className="overflow-hidden rounded-2xl border border-border bg-popover p-1.5 shadow-[var(--shadow-premium)]">
                 {categories.map((c) => (
                   <Link
                     key={c.id}
                     to="/courses"
                     search={{ category: c.slug }}
-                    className="flex items-center gap-3 px-4 py-3 text-sm text-foreground transition-colors hover:bg-accent"
+                    className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-foreground transition-colors hover:bg-accent"
                   >
                     <span
                       className="size-2.5 rounded-full"
@@ -64,7 +64,7 @@ export function Navbar() {
                 ))}
                 <Link
                   to="/courses"
-                  className="block border-t border-border px-4 py-3 text-sm font-medium text-primary hover:bg-accent"
+                  className="mt-1 block rounded-xl border-t border-border px-4 py-3 text-sm font-semibold text-primary hover:bg-accent"
                 >
                   সব কোর্স
                 </Link>
@@ -81,8 +81,8 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button asChild>
-            <Link to="/courses">কোর্স দেখুন</Link>
+          <Button asChild className="rounded-full bg-deep px-6 text-deep-foreground shadow-[var(--shadow-card)] hover:bg-primary">
+            <Link to="/courses">ভর্তি হোন</Link>
           </Button>
         </div>
 
@@ -140,7 +140,7 @@ export function Navbar() {
                 যোগাযোগ
               </Link>
 
-              <Button asChild className="mt-4">
+              <Button asChild className="mt-4 rounded-full bg-deep text-deep-foreground hover:bg-primary">
                 <Link to="/courses" onClick={() => setOpen(false)}>
                   কোর্স দেখুন
                 </Link>
